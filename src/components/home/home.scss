@@ -1,0 +1,12 @@
+.home {
+    &__title {
+      margin: 0 0 40px;
+      font-size: 76px;
+      font-weight: bold;
+      color: var(--darkColor);
+    }
+    &__subtitle {
+      font-size: 36px;
+      color: var(--darkColor);
+    }
+  }

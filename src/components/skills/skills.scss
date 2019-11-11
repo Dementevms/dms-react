@@ -1,0 +1,19 @@
+.skills {
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    &__item {
+      background: var(--darkColor);
+      margin: 10px;
+      padding: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--whiteColor);
+  
+      &:first-child {
+        background: var(--brandColor);
+      }
+    }
+  }

@@ -1,0 +1,23 @@
+.career {
+    &__item {
+      margin: 30px 0;
+    }
+  
+    &__item-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--darkColor);
+    }
+  
+    &__item-time {
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--brandColor);
+    }
+  
+    &__item-desc {
+      font-size: 18px;
+      line-height: 30px;
+      color: var(--darkColor);
+    }
+  }

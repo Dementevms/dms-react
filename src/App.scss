@@ -1,0 +1,151 @@
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 10px;
+
+    &-track {
+      background: var(--whiteColor);
+    }
+
+    &-thumb {
+      background: var(--secondaryDarkColor);
+    }
+  }
+}
+
+body {
+  background: var(--backgrounColor);
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include scrollbar();
+}
+
+.theme {
+  &_light {
+    --whiteColor: #ffffff;
+    --darkColor: #2c3e50;
+    --secondaryDarkColor: #202a33;
+    --grayColor: #e2e2e2;
+    --brandColor: #4fc08d;
+    --backgrounColor: #ffffff;
+    --modalWrapper: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.section {
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--grayColor);
+  width: 100%;
+  height: 100vh;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__left {
+    width: 30%;
+  }
+
+  &__right {
+    width: 70%;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 76px;
+    font-weight: bold;
+    color: var(--darkColor);
+
+    &::before {
+      display: block;
+      content: "";
+      border: 10px solid var(--grayColor);
+      width: 100%;
+      height: calc(100vh - 200px);
+      position: absolute;
+      top: 44px;
+      left: 100px;
+      z-index: -1;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+}
+
+.modal {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--modalWrapper);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__content {
+    overflow: hidden;
+    overflow-y: auto;
+    max-width: 1280px;
+    height: calc(100vh - 120px);
+
+    @include scrollbar();
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__close {
+    display: block;
+    background-color: var(--brandColor);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      background: var(--whiteColor);
+      margin: -1px 0 0 -15px;
+      width: 30px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    &::before {
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      transform: rotateZ(-45deg);
+    }
+  }
+}

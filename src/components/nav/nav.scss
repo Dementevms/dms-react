@@ -1,0 +1,28 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background: var(--backgrounColor);
+    border-left: 1px solid var(--grayColor);
+    padding: 100px 0;
+    width: 100px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+  
+    &__item {
+      font-size: 14px;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      color: var(--darkColor);
+      transition: 0.33s ease;
+  
+      &:hover {
+        cursor: pointer;
+        color: var(--brandColor);
+      }
+    }
+  }
